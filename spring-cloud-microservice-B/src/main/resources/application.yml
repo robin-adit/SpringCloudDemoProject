@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: microservice-B
+server:
+  port: 8889
+
+  eureka:
+    instance:
+      hostname: localhost

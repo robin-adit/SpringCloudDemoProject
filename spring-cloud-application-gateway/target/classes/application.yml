@@ -1,0 +1,21 @@
+server:
+  port: 9090
+
+eureka:
+  instance:
+   hostname: localhost
+
+spring:
+  application:
+    name: spring-cloud-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: microservice-A
+          uri: http://localhost:8888/
+          predicates:
+            - Path=/A/**
+        - id: microservice-B
+          uri: http://localhost:8889/
+          predicates:
+            - Path=/B/**
